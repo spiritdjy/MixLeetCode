@@ -60,7 +60,8 @@ def next_permutation(int_list: list):
 
 def test():
     assert next_permutation([1,2,3]) == [1,3,2]
-    assert next_permutation([3,2,1]) == [1,2,3]
+    assert next_permutation([1, 2, 3]) == [1, 3, 2]
+    assert next_permutation([5, 4, 3, 2, 1]) == [1, 2, 3, 4, 5]
     assert next_permutation([1,1,5]) == [1,5,1]
     assert next_permutation([1, 5, 1]) == [5, 1, 1]
     assert next_permutation([1, 1, 1]) == [1, 1, 1]
