@@ -16,7 +16,7 @@ class Solution:
         for i in range(len(nums) - 1, -1, -1):
             if max_(i, len(nums)) == nums[i]:
                 continue
-                
+
 
             return
 
