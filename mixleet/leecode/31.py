@@ -5,19 +5,22 @@ class Solution:
         1 2 3 --> 1 3 2
         1 2 3 1 -> 1 3 1 2
         """
-        def max_(i, j):
-            ret = nums[i]
-            for k in range(i+1, j):
-                if nums[k] > ret:
-                    ret = nums[k]
 
-            return ret
+        def swap(i):
+            select = None
+            index = None
+            for j in range(i + 1, len(nums)):
+                if (select is None and nums[i] < nums[j]) or nums[i] < nums[j] < select:
+                    select = nums[j]
+                    index = j
+
+            nums[index], nums[i] = nums[i], nums[index]
 
         for i in range(len(nums) - 1, -1, -1):
-            if max_(i, len(nums)) == nums[i]:
+            if max(nums[_] for _ in range(i, len(nums))) == nums[i]:
                 continue
-
-
+            swap(i)
+            nums[i+1:] = sorted(nums[i+1:])
             return
 
         nums.sort()
